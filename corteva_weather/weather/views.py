@@ -7,16 +7,14 @@ from  django_filters.rest_framework import DjangoFilterBackend
 # Create your views here.
 
 
-
 class WeatherStationViewSet(ReadOnlyModelViewSet):
-    queryset = WeatherStation.objects.order_by("station_name").all()
+    queryset = WeatherStation.objects.order_by("station_id", "station_name").all()
     serializer_class = WeatherStationSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     ordering_fields = ["station"]
-    
 
 class WeatherRecordsViewSet(ReadOnlyModelViewSet):
-    queryset = WeatherRecord.objects.order_by("station", "date").all()
+    queryset = WeatherRecord.objects.order_by("station", "date").select_related("weather_station").all()
     # Make it so that it shows the id and name of the station
     serializer_class = WeatherRecordSerializer
     filter_backends = [DjangoFilterBackend, OrderingFilter]

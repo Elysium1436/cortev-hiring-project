@@ -10,6 +10,7 @@ class WeatherStationSerializer(serializers.ModelSerializer):
         
 
 class WeatherRecordSerializer(serializers.ModelSerializer):
+    station_id = serializers.CharField(source="weather_station.station_id")
     class Meta:
         model = WeatherRecord
         
