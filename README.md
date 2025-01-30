@@ -1,5 +1,10 @@
 # cortev-hiring-project
 
+This repository is for the Cortev Hiring Process. Feedback regardless of the result would be appreciated.
+
+The AWS discussion is in the file "AWS-structure.md"
+
+### Installing the project
 Use poetry for dependency managment.
 
 Install poetry using 
