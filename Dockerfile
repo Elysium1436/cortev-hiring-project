@@ -22,7 +22,7 @@ RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Copy only requirements to cache them in docker layer
 WORKDIR /APP
-COPY poetry.lock pyproject.toml /code/
+COPY poetry.lock pyproject.toml /APP
 
 # Project initialization:
 RUN poetry install --no-interaction --no-ansi
@@ -32,4 +32,4 @@ COPY . /APP
 
 
 
-CMD [ "poetry", "run", "gunicorn", "corteva_weather.wsgi:application", "--host", "0.0.0.0", "--port", "8000" ]
+CMD [ "poetry", "run", "gunicorn", "corteva_weather.wsgi:application", "--bind", "0.0.0.0:8000" ]

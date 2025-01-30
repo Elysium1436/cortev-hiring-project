@@ -6,14 +6,15 @@ authors = [
     {name = "Elysium1436",email = "bryan.af7@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<4"
 dependencies = [
     "django (>=5.1.5,<6.0.0)",
     "djangorestframework (>=3.15.2,<4.0.0)",
     "pandas (>=2.2.3,<3.0.0)",
     "django-filter (>=24.3,<25.0)",
     "gunicorn (>=23.0.0,<24.0.0)",
-    "drf-spectacular (>=0.28.0,<0.29.0)"
+    "drf-spectacular (>=0.28.0,<0.29.0)",
+    "django-environ (>=0.12.0,<0.13.0)"
 ]
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -21,3 +22,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 package-mode = false
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-django = "^4.9.0"
+
