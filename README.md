@@ -1,5 +1,5 @@
 
-# cortev-hiring-project
+# corteva-hiring-project
 
 This repository is for the Cortev Hiring Process. Feedback regardless of the result would be appreciated.
 
