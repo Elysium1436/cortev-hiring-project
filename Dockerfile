@@ -17,17 +17,13 @@ ENV PYTHONFAULTHANDLER=1 \
 RUN echo ${POETRY_HOME} $POETRY_HOME
 RUN cd /usr/local && ls
 
-# System deps:
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
-# Copy only requirements to cache them in docker layer
 WORKDIR /APP
-COPY poetry.lock pyproject.toml /APP
+COPY poetry.lock pyproject.toml /APP/
 
-# Project initialization:
 RUN poetry install --no-interaction --no-ansi
 
-# Creating folders, and files for a project:
 COPY . /APP
 
 
