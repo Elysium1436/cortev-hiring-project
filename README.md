@@ -83,5 +83,4 @@ Run tests using the command
 
 - Celery tasks
 - Redis Cache
-- Integration Tests
-- Terraform
+- AWS Terraform config (Currently only local kubernetes config)
