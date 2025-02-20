@@ -79,6 +79,23 @@ To ingest the corn yield data, run
 Run tests using the command
 `pytest`
 
+# NEW FEATURES AFTER INITIAL ASSESSMENT
+
+To create a local kubernetes cluster, simply cd into the terraform folder and run
+
+`terraform init`
+
+then
+
+`terraform apply`
+
+If you want to delete your cluster, simply type
+
+`terraform destroy`
+
+Make sure you have docker and kubernetes installed.
+
+
 ### Some points of possible improvement
 
 - Celery tasks
